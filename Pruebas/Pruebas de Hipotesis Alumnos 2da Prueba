@@ -1,0 +1,235 @@
+Pruebas de Hipotesis Alumnos
+**********************************************************************************************
+Individual		 
+i1<-c(	4	, 	4	, 	4	, 	2	, 	4	, 	5	, 	4	, 	3	) 		 
+i3<-c(	4	, 	5	, 	5	, 	3	, 	5	, 	5	, 	5	, 	5	) 		 
+i2<-c(	5	, 	4	, 	3	, 	4	, 	4	, 	2	, 	4	, 	4	) 		 
+i4<-c(	5	, 	4	, 	5	, 	4	, 	3	, 	4	, 	5	, 	5	)
+
+
+
+O3>O1
+
+ wilcox.test(i3,i1,paired=TRUE, alternative=c("greater"))
+
+        Wilcoxon signed rank test with continuity correction
+
+data:  i3 and i1
+V = 21, p-value = 0.01313
+alternative hypothesis: true location shift is greater than 0
+
+
+
+O3>O4
+
+
+ wilcox.test(i3,i4, alternative=c("greater"))
+
+        Wilcoxon rank sum test with continuity correction
+
+data:  i3 and i4
+W = 39, p-value = 0.2139
+alternative hypothesis: true location shift is greater than 0
+
+
+O3=O4
+
+
+wilcox.test(i3,i4, )
+
+        Wilcoxon rank sum test with continuity correction
+
+data:  i3 and i4
+W = 39, p-value = 0.4278
+alternative hypothesis: true location shift is not equal to 0
+
+
+
+O2=O4
+
+wilcox.test(i4,i2,paired=TRUE)
+
+        Wilcoxon signed rank test with continuity correction
+
+data:  i4 and i2
+V = 13, p-value = 0.1675
+alternative hypothesis: true location shift is not equal to 0
+
+
+
+Estadísticamente no se puede probar que la percepcion de calificación individual mejore con cualquiera de los medios del experimento.
+
+**********************************************************************************************
+
+Grupal		 
+g1<-c(	4	, 	4	, 	3	, 	4	, 	4	, 	5	, 	4	, 	3	) 		
+ g3<-c(	4	, 	4	, 	5	, 	4	, 	5	, 	5	, 	5	, 	5	) 		 
+ g2<-c(	5	, 	4	, 	1	, 	5	, 	2	, 	2	, 	4	, 	2	) 		 
+ g4<-c(	5	, 	5	, 	4	, 	4	, 	3	, 	4	, 	4	, 	4	)
+
+
+
+
+
+O3>O1
+ wilcox.test(g3,g1,paired=TRUE, alternative=c("greater"))
+
+        Wilcoxon signed rank test with continuity correction
+
+data:  g3 and g1
+V = 10, p-value = 0.04734
+alternative hypothesis: true location shift is greater than 0
+
+Mensajes de aviso perdidos
+1: In wilcox.test.default(g3, g1, paired = TRUE, alternative = c("greater")) :
+  cannot compute exact p-value with ties
+2: In wilcox.test.default(g3, g1, paired = TRUE, alternative = c("greater")) :
+  cannot compute exact p-value with zeroes
+
+
+O3>O4
+
+
+
+ wilcox.test(g3,g4, alternative=c("greater"))
+
+        Wilcoxon rank sum test with continuity correction
+
+data:  g3 and g4
+W = 45.5, p-value = 0.06275
+alternative hypothesis: true location shift is greater than 0
+
+
+
+O3=O4
+
+ wilcox.test(g3,g4)
+
+        Wilcoxon rank sum test with continuity correction
+
+data:  g3 and g4
+W = 45.5, p-value = 0.1255
+alternative hypothesis: true location shift is not equal to 0
+
+
+
+
+
+O2=O4
+
+ wilcox.test(g2,g4,paired=TRUE)
+
+        Wilcoxon signed rank test with continuity correction
+
+data:  g2 and g4
+V = 2, p-value = 0.08898
+alternative hypothesis: true location shift is not equal to 0
+
+
+No existe diferencia entre la calificacion grupal entre quienes utilizan cualquier tipo de solucion
+
+******************************************************************************************************************
+
+Medios		 
+m1<-c(	4	, 	4	, 	4	, 	4	, 	4	, 	4	, 	4	, 	3	) 		 		 
+m3<-c(	4	, 	5	, 	4	, 	4	, 	5	, 	5	, 	5	, 	5	) 		 
+m2<-c(	3	, 	4	, 	3	, 	5	, 	4	, 	3	, 	5	, 	4	) 		 
+m4<-c(	3	, 	5	, 	4	, 	5	, 	3	, 	4	, 	4	, 	5	)
+
+
+O3>O1
+
+ wilcox.test(m3,m1,paired=TRUE, alternative=c("greater"))
+
+        Wilcoxon signed rank test with continuity correction
+
+data:  m3 and m1
+V = 15, p-value = 0.02386
+alternative hypothesis: true location shift is greater than 0
+
+
+O3=O4
+
+ wilcox.test(m3,m4)
+
+        Wilcoxon rank sum test with continuity correction
+
+data:  m3 and m4
+W = 43, p-value = 0.2243
+alternative hypothesis: true location shift is not equal to 0
+
+
+O2=O4
+
+ wilcox.test(m4,m2 , paired=TRUE)
+
+        Wilcoxon signed rank test with continuity correction
+
+data:  m4 and m2
+V = 14, p-value = 0.484
+alternative hypothesis: true location shift is not equal to 0
+
+
+
+Los estudiantes no observan ventaja alguna en la representación de su trabajo si utilizan una mesa o no
+
+
+********************************************************************************************************
+Distribucion		 
+c1<-c(	4	, 	3	, 	3	, 	2	, 	5	, 	4	, 	5	, 	3	) 		 
+c3<-c(	4	, 	5	, 	5	, 	5	, 	5	, 	5	, 	5	, 	5	) 		 
+c2<-c(	4	, 	3	, 	4	, 	3	, 	1	, 	3	, 	3	, 	1	) 		 
+c4<-c(	4	, 	5	, 	4	, 	4	, 	2	, 	4	, 	4	, 	5	) 		
+
+
+O3>O1
+
+wilcox.test(c3,c1,paired=TRUE, alternative=c("greater"))
+
+        Wilcoxon signed rank test with continuity correction
+
+data:  c3 and c1
+V = 15, p-value = 0.02724
+alternative hypothesis: true location shift is greater than 0
+
+
+
+
+O3>O4
+
+wilcox.test(c3,c4, alternative=c("greater"))
+
+        Wilcoxon rank sum test with continuity correction
+
+data:  c3 and c4
+W = 52.5, p-value = 0.008414
+alternative hypothesis: true location shift is greater than 0
+
+
+
+
+O2=O4
+
+wilcox.test(c2,c4, paired=TRUE)
+
+        Wilcoxon signed rank test with continuity correction
+
+data:  c2 and c4
+V = 0, p-value = 0.03103
+alternative hypothesis: true location shift is not equal to 0
+
+
+--> O4>O2
+
+
+wilcox.test(c4,c2,paired=TRUE, alternative=c("greater"))
+
+        Wilcoxon signed rank test with continuity correction
+
+data:  c4 and c2
+V = 21, p-value = 0.01552
+alternative hypothesis: true location shift is greater than 0
+
+
+
+La opinión de los estudiantes dice que tiene a haber una participación mas efectiva si utilizan una mesa.
